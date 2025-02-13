@@ -1,0 +1,87 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+#snow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+#glow {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px white, 0 0 20px white, 0 0 40px white;
+    animation: sparkle 1.5s infinite alternate;
+}
+
+@keyframes sparkle {
+    0% { text-shadow: 0 0 10px white, 0 0 20px white; }
+    100% { text-shadow: 0 0 20px white, 0 0 40px white; }
+}
+
+.badges {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+.badges i {
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.badges i:hover {
+    color: gold;
+}
+
+#typewriter {
+    font-size: 1.2rem;
+    font-weight: bold;
+    min-height: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid white;
+    width: fit-content;
+    margin: 10px auto;
+}
+
+.guns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.guns img {
+    width: 50px;
+    height: auto;
+    animation: flash 1s infinite alternate;
+}
+
+@keyframes flash {
+    0% { filter: invert(0); }
+    100% { filter: invert(1); }
+}
