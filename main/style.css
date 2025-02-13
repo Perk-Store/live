@@ -1,13 +1,40 @@
 body, html {
     height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
+    background: black;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('../pics/me3.jpg') no-repeat center center/cover;
+    overflow: hidden;
+    transition: background 1s ease-in-out;
+}
+
+#enterContainer {
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: black;
+}
+
+#enterBtn {
+    padding: 15px 30px;
+    font-size: 1.2em;
     color: white;
-    font-family: Arial, sans-serif;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.5s ease;
+    outline: none;
+}
+
+#enterBtn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 #snow {
@@ -18,73 +45,6 @@ body, html {
     height: 100%;
     z-index: 1;
     pointer-events: none;
-}
-
-#enterContainer {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
-    z-index: 2;
-}
-
-#enterBtn {
-    padding: 15px 30px;
-    font-size: 1.2em;
-    color: white;
-    background: transparent;
-    border: 2px solid white;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-#enterBtn:hover {
-    background: white;
-    color: black;
-}
-
-#content {
-    display: none;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-}
-
-#glowText {
-    font-size: 3rem;
-    text-shadow: 0 0 10px white, 0 0 20px white;
-}
-
-#badges {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 10px 0;
-}
-
-#badges i {
-    font-size: 1.5em;
-    color: gold;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 5px 10px;
-    border-radius: 10px;
-}
-
-#typeText {
-    font-size: 1.2em;
-    height: 1.5em;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-#guns img {
-    width: 50px;
-    margin: 10px;
-    animation: flash 0.5s infinite alternate;
-}
-
-@keyframes flash {
-    from { filter: brightness(1); }
-    to { filter: brightness(3); }
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
 }
