@@ -75,20 +75,26 @@ body, html {
 #typingText {
     font-size: 1.5em;
     color: #bbb;
+    margin-top: 50px; /* Move typing text further down to fit guns */
 }
 
 #guns {
     position: absolute;
-    top: 50%;
+    top: 60%; /* Move closer to the typing text */
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 20px; /* Smaller gap between guns */
 }
 
 .gun {
-    width: 100px;
+    width: 50px; /* Smaller gun size */
     animation: flashGuns 0.5s infinite alternate;
+}
+
+/* Flip the left gun */
+#gunLeft {
+    transform: scaleX(-1); /* Flip horizontally */
 }
 
 @keyframes flashGuns {
@@ -111,27 +117,27 @@ body, html {
     z-index: 10;
 }
 
-/* Icons container inside badge box */
-#badgeBox img {
-    width: 25px;
-    height: 25px;
+/* Font Awesome icons in the badge box */
+#badgeBox i {
+    font-size: 30px;
+    color: white;
     cursor: pointer;
     transition: transform 0.2s ease;
 }
 
 /* Icon hover effect */
-#badgeBox img:hover {
+#badgeBox i:hover {
     transform: scale(1.2);
     filter: brightness(1.5);
 }
 
 /* Tooltip for icons */
-#badgeBox img::after {
+#badgeBox i::after {
     content: '';
     display: none;
 }
 
-#badgeBox img[data-tooltip]:hover::after {
+#badgeBox i[data-tooltip]:hover::after {
     content: attr(data-tooltip);
     position: absolute;
     top: -30px;
