@@ -7,6 +7,8 @@ document.getElementById('enterButton').addEventListener('click', () => {
         setTimeout(() => {
             document.getElementById('mainContent').style.opacity = '1';
             document.getElementById('bgMusic').play();
+            document.body.style.backgroundImage = "url('pics/me3.jpg')";
+            document.body.style.transition = "background-image 1s ease-in-out"; // Smooth background change
             startTypingEffect();
         }, 100);
     }, 500);
