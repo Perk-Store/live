@@ -6,18 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>perk.lol</title>
-    <link rel="stylesheet" href="main/style.css"> <!-- Corrected path to style.css -->
+    <link rel="stylesheet" href="main/style.css">
 </head>
 <body>
-    <div id="snow"></div> <!-- Snow effect will be active from the start -->
-
-    <!-- Badge Box Below the Main Text -->
-    <div id="badgeBox">
-        <img src="pics/crown.png" alt="Crown" data-tooltip="Owner">
-        <img src="pics/money-bag.png" alt="Money Bag" data-tooltip="Rich">
-        <img src="pics/rocket.png" alt="Rocket" data-tooltip="Seller">
-    </div>
-
+    <div id="snow"></div>
+    
     <div id="enterScreen">
         <button id="enterButton">Enter</button>
     </div>
@@ -29,14 +22,17 @@
             <img src="pics/gun.png" class="gun" id="gunLeft">
             <img src="pics/gun.png" class="gun" id="gunRight">
         </div>
+
+        <!-- Badge Box -->
+        <div id="badgeBox">
+            <i class="fa fa-crown" data-tooltip="Owner"></i>
+            <i class="fa fa-money-bill" data-tooltip="Rich"></i>
+            <i class="fa fa-rocket" data-tooltip="Seller"></i>
+        </div>
     </div>
 
     <audio id="bgMusic" src="audio/background.mp3" loop></audio>
 
-    <!-- Include particles.js script here -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
-    <!-- Link to your main.js -->
-    <script src="main/main.js"></script>
+    <script src="main/script.js"></script>
 </body>
 </html>
