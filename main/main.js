@@ -1,27 +1,36 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const txt = document.getElementById('typewriter');
-    const words = ["2$ for 14 boosts?", "discord.gg/ethicalmarket", "#1 cheapest seller"];
-    let i = 0, j = 0, isDeleting = false, speed = 100;
+const enterBtn = document.getElementById('enterBtn');
+const content = document.getElementById('content');
+const bgAudio = document.getElementById('bgAudio');
+const typeText = document.getElementById('typeText');
 
-    function type() {
-        txt.innerText = words[i].substring(0, j);
-        if (!isDeleting && j < words[i].length) {
-            j++;
-        } else if (isDeleting && j > 0) {
-            j--;
-        } else if (!isDeleting && j === words[i].length) {
-            isDeleting = true;
-            speed = 1000;
-        } else if (isDeleting && j === 0) {
-            isDeleting = false;
-            speed = 100;
-            i = (i + 1) % words.length;
-        }
-        setTimeout(type, speed);
+const texts = ["2$ for 14 boosts?", "discord.gg/ethicalmarket", "#1 cheapest seller"];
+let index = 0, char = 0, deleting = false;
+
+function typeEffect() {
+    if (!deleting && char < texts[index].length) {
+        typeText.textContent += texts[index][char++];
+        setTimeout(typeEffect, 100);
+    } else if (!deleting && char === texts[index].length) {
+        setTimeout(() => { deleting = true; typeEffect(); }, 1500);
+    } else if (deleting && char > 0) {
+        typeText.textContent = texts[index].substring(0, --char);
+        setTimeout(typeEffect, 50);
+    } else {
+        deleting = false;
+        index = (index + 1) % texts.length;
+        setTimeout(typeEffect, 500);
     }
+}
 
-    type();
+enterBtn.addEventListener('click', () => {
+    enterBtn.style.display = 'none';
+    content.style.display = 'block';
+    bgAudio.play();
+    typeEffect();
+});
 
+// Snow Effect
+document.addEventListener('DOMContentLoaded', function () {
     const script = document.createElement('script');
     script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
     script.onload = function () {
@@ -33,22 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 "size": { "value": 2.3, "random": true, "anim": { "enable": true }},
                 "line_linked": { "enable": false },
                 "move": {
-                    "enable": true,
-                    "speed": 5,
-                    "direction": "bottom",
-                    "random": true,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": { "enable": true, "rotateX": 300, "rotateY": 1200 }
+                    "enable": true, "speed": 5, "direction": "bottom",
+                    "random": true, "straight": false, "out_mode": "out"
                 }
             },
             "interactivity": {
-                "events": {
-                    "onhover": { "enable": false },
-                    "onclick": { "enable": true },
-                    "resize": false
-                }
+                "events": { "onclick": { "enable": true }, "resize": false }
             },
             "retina_detect": true
         });
