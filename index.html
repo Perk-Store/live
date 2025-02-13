@@ -3,30 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>evaqed</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>perk.lol</title>
+    <link rel="icon" href="pics/perkstore.png" type="image/png">
+    <link rel="stylesheet" href="main/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <div id="snow"></div>
-    
-    <div class="container">
-        <h1 id="glow">evaqed</h1>
-        
-        <div class="badges">
-            <i class="fas fa-check-circle"></i>
-            <i class="fas fa-money-bill-wave"></i>
-            <i class="fas fa-crown"></i>
+
+    <div id="enterContainer">
+        <button id="enterBtn">Enter</button>
+    </div>
+
+    <div id="content">
+        <audio id="bgAudio" src="audio/background.mp3"></audio>
+
+        <div id="header">
+            <h1 id="glowText">evaqed</h1>
+            <div id="badges">
+                <i class="fas fa-crown"></i>
+                <i class="fas fa-badge-check"></i>
+                <i class="fas fa-money-bill-wave"></i>
+            </div>
+            <p id="typeText"></p>
         </div>
-        
-        <p id="typewriter"></p>
-        
-        <div class="guns">
+
+        <div id="guns">
             <img src="pics/gun.png" alt="Gun">
             <img src="pics/gun.png" alt="Gun">
         </div>
     </div>
 
-    <script src="main.js"></script>
+    <script src="main/script.js"></script>
 </body>
 </html>
