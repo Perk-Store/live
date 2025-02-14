@@ -18,16 +18,20 @@ document.addEventListener('DOMContentLoaded', function () {
     };
     document.head.append(script);
     
-    // Enter button click event
+    // Enter button functionality
     document.getElementById('enterButton').addEventListener('click', () => {
-        document.getElementById('enterScreen').style.opacity = '0';
+        const enterScreen = document.getElementById('enterScreen');
+        const mainContent = document.getElementById('mainContent');
+        const bgMusic = document.getElementById('bgMusic');
 
+        // Fade out enter screen
+        enterScreen.style.opacity = '0';
         setTimeout(() => {
-            document.getElementById('enterScreen').style.display = 'none';
-            document.getElementById('mainContent').style.display = 'block';
+            enterScreen.style.display = 'none';
+            mainContent.style.display = 'block';
             setTimeout(() => {
-                document.getElementById('mainContent').style.opacity = '1';
-                document.getElementById('bgMusic').play();
+                mainContent.style.opacity = '1';
+                bgMusic.play();
                 startTypingEffect();
             }, 100);
         }, 500);
