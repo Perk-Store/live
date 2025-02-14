@@ -1,106 +1,101 @@
-/* Ensure page starts black */
 body {
     margin: 0;
-    overflow: hidden;
+    padding: 0;
     background: black;
-    color: white;
+    overflow: hidden;
     font-family: Arial, sans-serif;
-    text-align: center;
 }
 
-/* Enter screen styling */
+/* Enter Screen */
 #enterScreen {
     position: fixed;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background: black;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transition: opacity 0.5s ease-in-out;
 }
 
 #enterButton {
     padding: 15px 30px;
     font-size: 20px;
-    cursor: pointer;
-    border: none;
     background: white;
-    color: black;
-    border-radius: 5px;
-    transition: 0.3s;
+    border: none;
+    cursor: pointer;
 }
 
-#enterButton:hover {
-    background: gray;
-}
-
-/* Main content hidden at start */
+/* Main Content */
 #mainContent {
     position: fixed;
     width: 100%;
-    height: 100%;
-    background: url('../pics/me3.jpg') no-repeat center center/cover;
+    height: 100vh;
     display: none;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url('../pics/me3.jpg') no-repeat center center/cover;
     opacity: 0;
-    transition: opacity 1s ease;
+    transition: opacity 1s ease-in-out;
 }
 
-/* Glowing username text */
+/* Snow Effect */
+#snow {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+}
+
+/* Glow Text */
 #glowText {
-    font-size: 40px;
+    font-size: 50px;
     font-weight: bold;
-    text-shadow: 0 0 10px white, 0 0 20px cyan;
-    animation: sparkle 1.5s infinite alternate;
+    color: white;
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+    animation: sparkle 2s infinite alternate;
 }
 
 @keyframes sparkle {
-    0% { text-shadow: 0 0 10px white, 0 0 20px cyan; }
-    100% { text-shadow: 0 0 20px white, 0 0 40px cyan; }
+    0% { text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff; }
+    100% { text-shadow: 0 0 20px #fff, 0 0 40px #ff00ff; }
 }
 
-/* Typing effect text */
+/* Typing Text */
 #typingText {
     font-size: 24px;
-    font-weight: bold;
-    margin-top: 10px;
+    color: white;
 }
 
-/* Flashing gun icons */
-#guns {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.gun {
-    width: 50px;
-    height: auto;
-    animation: flashGun 0.5s infinite alternate;
-}
-
-@keyframes flashGun {
-    0% { filter: brightness(100%); }
-    100% { filter: brightness(200%); }
-}
-
-/* Badge box */
+/* Badge Box */
 #badgeBox {
-    margin-top: 20px;
     display: flex;
     gap: 15px;
+    margin-top: 20px;
 }
 
 #badgeBox i {
     font-size: 24px;
+    color: gold;
+    background: rgba(0, 0, 0, 0.7);
     padding: 10px;
-    background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    transition: 0.3s;
 }
 
-#badgeBox i:hover {
-    background: rgba(255, 255, 255, 0.3);
+/* Guns */
+.gun {
+    width: 80px;
+    position: absolute;
+    top: 50%;
+}
+
+#gunLeft { left: 20%; animation: gunFlash 0.5s infinite alternate; }
+#gunRight { right: 20%; animation: gunFlash 0.5s infinite alternate; }
+
+@keyframes gunFlash {
+    0% { filter: brightness(1); }
+    100% { filter: brightness(3); }
 }
