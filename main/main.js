@@ -25,10 +25,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const bgMusic = document.getElementById('bgMusic');
 
         // Fade out enter screen
+        enterScreen.style.transition = 'opacity 0.5s ease';
         enterScreen.style.opacity = '0';
+
         setTimeout(() => {
             enterScreen.style.display = 'none';
-            mainContent.style.display = 'block';
+            mainContent.style.display = 'flex'; // Fix: Ensure main content appears
             setTimeout(() => {
                 mainContent.style.opacity = '1';
                 bgMusic.play();
