@@ -75,16 +75,16 @@ body, html {
 #typingText {
     font-size: 1.5em;
     color: #bbb;
-    margin-top: 50px;
+    margin-top: 20px; /* Adjusted margin to move closer to the badge box */
 }
 
 #guns {
     position: absolute;
-    top: 60%;
+    top: 75%; /* Adjusted for larger gap between typing text and guns */
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px; /* Increased gap between guns */
 }
 
 .gun {
@@ -102,18 +102,18 @@ body, html {
     100% { filter: brightness(0); }
 }
 
-/* Badge Box Position Below Main Text */
+/* Adjusted the Badge Box Size and Position */
 #badgeBox {
     position: absolute;
-    top: 120px;
+    top: 100px; /* Moved closer to the glowy text */
     left: 50%;
     transform: translateX(-50%);
-    padding: 10px 20px;
+    padding: 5px 10px; /* Reduced padding */
     background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 25px;
+    border-radius: 20px; /* Smaller border radius */
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 15px; /* Smaller gap between icons */
     z-index: 10;
 }
 
