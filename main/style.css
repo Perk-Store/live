@@ -75,7 +75,7 @@ body, html {
 #typingText {
     font-size: 1.5em;
     color: #bbb;
-    margin-top: 10px; /* Adjusted margin to move closer to the badge box */
+    margin-top: -40px; /* Adjusted margin to move closer to the badge box */
 }
 
 #guns {
