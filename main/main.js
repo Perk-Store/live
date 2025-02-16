@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Load particles.js for snow effect
     const script = document.createElement('script');
     script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
     script.onload = function () {
@@ -40,24 +39,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     enterButton.addEventListener('click', () => {
-        // Fade out enter screen
         enterScreen.style.transition = 'opacity 1s ease';
         enterScreen.style.opacity = '0';
 
-        // Start playing music immediately
         loadSong(songIndex);
 
         setTimeout(() => {
             enterScreen.style.display = 'none';
             mainContent.style.display = 'block';
-            mainContent.style.opacity = '0'; // Ensure it's initially hidden
+            mainContent.style.opacity = '0';
 
             setTimeout(() => {
                 mainContent.style.transition = 'opacity 1s ease';
                 mainContent.style.opacity = '1';
                 startTypingEffect();
 
-                // Fade in linkboxes one by one
                 document.querySelectorAll('.linkbox').forEach((link, index) => {
                     setTimeout(() => {
                         link.classList.add('show');
@@ -67,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 1000);
     });
 
-    // Typing effect function
     function startTypingEffect() {
         const textElement = document.getElementById('typingText');
         const texts = ["2$ for 14 boosts?", "discord.gg/ethicalmarket", "#1 cheapest seller"];
@@ -102,7 +97,6 @@ document.addEventListener('DOMContentLoaded', function () {
         type();
     }
 
-    // Music Player Controls
     const playPauseButton = document.getElementById('playPauseButton');
     const prevButton = document.getElementById('prevButton');
     const nextButton = document.getElementById('nextButton');
@@ -130,13 +124,11 @@ document.addEventListener('DOMContentLoaded', function () {
         audioPlayer.volume = volumeSlider.value;
     });
 
-    // Auto-change album art when song ends
     audioPlayer.addEventListener('ended', () => {
         songIndex = (songIndex + 1) % songs.length;
         loadSong(songIndex);
     });
 
-    // 🌀 DVD Visual Movement
     let dvdX = 50, dvdY = 50, dvdSpeedX = 2, dvdSpeedY = 2;
     
     function moveDVD() {
