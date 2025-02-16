@@ -113,3 +113,25 @@ nav {
     background: grey;
     color: black;
 }
+/* Header Icons (Top Right Corner) */
+.header-icons {
+    position: fixed; /* Keep icons in place even when scrolling */
+    top: 15px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 1000; /* Make sure icons stay on top */
+}
+
+.header-icons .icon {
+    color: white; /* Icons are white */
+    font-size: 2em; /* Default size */
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.header-icons .icon:hover {
+    transform: scale(1.2); /* Icons grow when hovered */
+    color: grey; /* Optional: Change color slightly */
+}
+
