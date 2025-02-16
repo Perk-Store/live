@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Close the modal
+    // Close the modal when the close button (X) is clicked
     closeBtn.addEventListener('click', () => {
         modal.style.display = "none"; // Hide modal
         body.classList.remove('blur-background'); // Remove blur
