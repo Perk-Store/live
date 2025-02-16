@@ -17,7 +17,7 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1500; /* Higher than everything */
+    z-index: 1500;
     pointer-events: none;
     opacity: 1;
 }
@@ -84,7 +84,7 @@ body, html {
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: 30px; /* Increased gap between guns */
+    gap: 30px;
 }
 
 .gun {
@@ -92,7 +92,6 @@ body, html {
     animation: flashGuns 0.5s infinite alternate;
 }
 
-/* Flip the left gun */
 #gunLeft {
     transform: scaleX(-1);
 }
@@ -102,18 +101,17 @@ body, html {
     100% { filter: brightness(0); }
 }
 
-/* Adjusted the Badge Box Size and Position */
 #badgeBox {
     position: absolute;
-    top: 100px; /* Moved closer to the glowy text */
+    top: 100px;
     left: 50%;
     transform: translateX(-50%);
-    padding: 5px 10px; /* Reduced padding */
+    padding: 5px 10px;
     background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 20px; /* Smaller border radius */
+    border-radius: 20px;
     display: flex;
     align-items: center;
-    gap: 15px; /* Smaller gap between icons */
+    gap: 15px;
     z-index: 10;
 }
 
@@ -149,7 +147,7 @@ body, html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px; /* Spacing between buttons */
+    gap: 10px;
 }
 
 .linkbox {
@@ -180,7 +178,7 @@ body, html {
 .linkbox i {
     transition: transform 0.2s ease;
     font-size: 20px;
-    margin-left: 10px; /* Adjust to position icon properly */
+    margin-left: 10px;
 }
 
 .linkbox span {
@@ -189,7 +187,6 @@ body, html {
     padding-right: 15px;
 }
 
-/* 🎵 Music Player Styles */
 #musicPlayer {
     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
     position: absolute;
@@ -243,7 +240,6 @@ body, html {
     cursor: pointer;
 }
 
-/* 🌀 Rotating DVD Visual */
 #dvdVisual {
     width: 80px;
     height: 80px;
