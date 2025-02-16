@@ -10,29 +10,63 @@
 </head>
 <body>
     <div id="snow"></div>
-    
+
     <div id="enterScreen">
         <button id="enterButton">Enter</button>
     </div>
 
 
     <div id="mainContent">
-        <h1 id="glowText">perk.lol</h1>
+        <h1 id="glowText">Ethical Market</h1>
         <p id="typingText"></p>
         <div id="guns">
             <img src="pics/gun.png" class="gun" id="gunLeft">
             <img src="pics/gun.png" class="gun" id="gunRight">
         </div>
 
-    !-- Badge Box -->
         <div id="badgeBox">
-            <i class="fa fa-crown" data-tooltip="Owner"></i>
+            <i class="fa fa-crown" data-tooltip="Top"></i>
             <i class="fa fa-money-bill" data-tooltip="Rich"></i>
             <i class="fa fa-rocket" data-tooltip="Seller"></i>
         </div>
     </div>
 
-    <audio id="bgMusic" src="audio/background.mp3" loop></audio>
+    <div class="container">
+        <a href="https://discord.gg/ethicalmarket" target="_blank" class="linkbox">
+            <i class="fab fa-discord"></i>
+            <span>Discord</span>
+        </a>
+
+        <a href="products.html" class="linkbox">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>Products</span>
+        </a>
+
+        <a href="#" target="_blank" class="linkbox">
+            <i class="fab fa-youtube"></i>
+            <span>Youtube</span>
+        </a>
+
+        <a href="#" target="_blank" class="linkbox">
+            <i class="fas fa-dollar-sign"></i>
+            <span>Tips</span>
+        </a>
+    </div>
+
+    <div id="musicPlayer">
+        <img id="albumArt" src="audiopfp/bg1.png" alt="Album Art">
+        <div id="controls">
+            <button id="prevButton">⏮</button>
+            <button id="playPauseButton">⏯</button>
+            <button id="nextButton">⏭</button>
+        </div>
+        <input type="range" id="volumeSlider" min="0" max="1" step="0.01">
+        <img id="dvdVisual" src="pics/dvd.png" alt="Rotating DVD">
+    </div>
+    
+    <audio id="audioPlayer" loop></audio>
+</div>
+    
 
     <script src="main/main.js"></script>
 </body>
