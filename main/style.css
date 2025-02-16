@@ -17,7 +17,7 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: 1500; /* Higher than everything */
     pointer-events: none;
     opacity: 1;
 }
@@ -30,7 +30,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 5;
+    z-index: 10;
 }
 
 #enterButton {
@@ -73,14 +73,14 @@ body, html {
 }
 
 #typingText {
+    margin-top: 70px;
     font-size: 1.5em;
-    color: #bbb;
-    bottom: 100px;
+    color: #ffffff;
 }
 
 #guns {
+    margin-bottom: 600px;
     position: absolute;
-    top: 75%; /* Adjusted for larger gap between typing text and guns */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -142,4 +142,115 @@ body, html {
     pointer-events: none;
     z-index: 20;
     white-space: nowrap;
+}
+
+.container {
+    transform: translateX(0%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Spacing between buttons */
+}
+
+.linkbox {
+    opacity: 0;
+    transform: translateY(20px);
+    backdrop-filter: blur(3px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    width: 220px;
+    padding: 12px;
+    border: 2px solid white;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+.linkbox.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.linkbox:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.linkbox i {
+    transition: transform 0.2s ease;
+    font-size: 20px;
+    margin-left: 10px; /* Adjust to position icon properly */
+}
+
+.linkbox span {
+    flex-grow: 1;
+    text-align: right;
+    padding-right: 15px;
+}
+
+/* 🎵 Music Player Styles */
+#musicPlayer {
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 180px;
+}
+
+#albumArt {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+#controls {
+    display: flex;
+    gap: 10px;
+}
+
+#controls button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#volumeSlider {
+    width: 100%;
+    appearance: none;
+    background: white;
+    height: 4px;
+    border-radius: 2px;
+    outline: none;
+}
+
+#volumeSlider::-webkit-slider-thumb {
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* 🌀 Rotating DVD Visual */
+#dvdVisual {
+    width: 80px;
+    height: 80px;
+    animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
