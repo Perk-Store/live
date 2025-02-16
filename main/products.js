@@ -12,10 +12,10 @@ document.addEventListener('DOMContentLoaded', function () {
             const category = button.getAttribute('data-category');
 
             productCards.forEach(card => {
-                if (category === 'All' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'block';
+                if (category === "All" || card.dataset.category === category) {
+                    card.style.display = "block";
                 } else {
-                    card.style.display = 'none';
+                    card.style.display = "none";
                 }
             });
         });
